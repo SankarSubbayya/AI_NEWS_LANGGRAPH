@@ -13,7 +13,7 @@ Six major enhancements have been added to make this system production-ready:
 5. **🖼️ Dual Image Generation** - Get both DALL-E (artistic) and Flux (photorealistic) cover images automatically
 6. **🧠 Cancer Research Knowledge Graph** - Domain-specific medical knowledge graph with cancer entities, treatments, biomarkers, and medical relationships (NOT TF-IDF!)
 
-**See [FLUX_AUTO_GENERATION.md](FLUX_AUTO_GENERATION.md) for Flux setup and [CANCER_KG_SUMMARY.md](CANCER_KG_SUMMARY.md) for knowledge graph details.**
+**See [FLUX_AUTO_GENERATION.md](docs/features/FLUX_AUTO_GENERATION.md) for Flux setup and [CANCER_KG_SUMMARY.md](docs/archive/CANCER_KG_SUMMARY.md) for knowledge graph details.**
 
 ---
 
@@ -69,11 +69,15 @@ AI_NEWS_LANGGRAPH/
 │       ├── prompts_costar.yaml  # NEW: COSTAR prompts
 │       ├── agents.yaml          # Agent configurations
 │       └── tasks.yaml           # Task definitions
-├── docs/                        # 📚 Documentation
-│   ├── ENHANCEMENTS_COMPLETE.md # Feature documentation
-│   ├── QUICK_START.md           # Quick reference guide
-│   ├── ARCHITECTURE.md          # System architecture
-│   └── ...                      # Additional guides
+├── docs/                        # 📚 Documentation (54 pages, organized)
+│   ├── index.md                 # Documentation homepage
+│   ├── guides/                  # How-to guides (14 files)
+│   ├── features/                # Feature documentation (11 files)
+│   ├── setup/                   # Setup guides (7 files)
+│   ├── troubleshooting/         # Fix guides (9 files)
+│   ├── references/              # Reference docs (4 files)
+│   ├── meta/                    # Meta documentation (9 files)
+│   └── archive/                 # Historical documentation (35+ files)
 ├── tests/                       # 🧪 Test suite
 │   ├── test_nodes_v2.py
 │   ├── test_costar_prompts.py
@@ -197,7 +201,7 @@ This opens a web browser with an interactive interface for:
 - Markdown report rendering
 - Download in multiple formats (HTML, Markdown, JSON)
 
-See [STREAMLIT_GUIDE.md](docs/STREAMLIT_GUIDE.md) for detailed usage instructions.
+See [STREAMLIT_GUIDE.md](docs/guides/STREAMLIT_GUIDE.md) for detailed usage instructions.
 
 ### Command Line Interface
 
@@ -337,18 +341,18 @@ This LangGraph implementation offers several advantages over the original CrewAI
 
 ## Documentation
 
-Comprehensive documentation is available in the `docs/` folder. See **[docs/README.md](docs/README.md)** for the complete documentation index.
+Comprehensive documentation is available in the `docs/` folder. See **[docs/index.md](docs/index.md)** for the complete documentation index.
 
 ### Quick Links
-- **[QUICK_START.md](docs/QUICK_START.md)** - Get started in 2 minutes
-- **[STREAMLIT_GUIDE.md](docs/STREAMLIT_GUIDE.md)** - Web interface guide
-- **[ARCHITECTURE.md](docs/ARCHITECTURE.md)** - System architecture and design
-- **[COSTAR_PROMPTS_GUIDE.md](docs/COSTAR_PROMPTS_GUIDE.md)** - COSTAR prompt framework
-- **[TESTING_GUIDE.md](docs/TESTING_GUIDE.md)** - Testing documentation
-- **[TROUBLESHOOTING.md](docs/TROUBLESHOOTING.md)** - Common issues and solutions
+- **[QUICK_START.md](docs/guides/QUICK_START.md)** - Get started in 2 minutes
+- **[STREAMLIT_GUIDE.md](docs/guides/STREAMLIT_GUIDE.md)** - Web interface guide
+- **[ARCHITECTURE.md](docs/references/ARCHITECTURE.md)** - System architecture and design
+- **[COSTAR_PROMPTS_GUIDE.md](docs/guides/COSTAR_PROMPTS_GUIDE.md)** - COSTAR prompt framework
+- **[TESTING_GUIDE.md](docs/guides/TESTING_GUIDE.md)** - Testing documentation
+- **[TROUBLESHOOTING.md](docs/troubleshooting/TROUBLESHOOTING.md)** - Common issues and solutions
 
-### All Documentation (16 guides)
-See the full documentation index at **[docs/README.md](docs/README.md)** for:
+### All Documentation (54 pages)
+See the full documentation index at **[docs/index.md](docs/index.md)** for:
 - Getting Started guides
 - Core architecture documentation
 - Prompt engineering guides
@@ -399,17 +403,17 @@ python -m ai_news_langgraph.main
 
 MIT License - See LICENSE file for details
 
-## Documentation
+## Documentation Resources
 
 Comprehensive documentation is available in the `docs/` directory:
 
-- 📖 [Documentation Index](docs/README.md) - Complete guide index
-- 🌐 [Streamlit Guide](docs/STREAMLIT_GUIDE.md) - Web interface tutorial
-- 🏗️ [Architecture](docs/ARCHITECTURE.md) - System design and components
-- 📋 [Tasks Guide](docs/TASKS_GUIDE.md) - Task configuration
-- 💬 [Prompts Guide](docs/PROMPTS_GUIDE.md) - Prompt management
-- 🔍 [Search API Guide](docs/SEARCH_API_GUIDE.md) - API configuration
-- 🔧 [Troubleshooting](docs/TROUBLESHOOTING.md) - Common issues and fixes
+- 📖 [Documentation Index](docs/index.md) - Complete guide index with 54 pages
+- 🌐 [Streamlit Guide](docs/guides/STREAMLIT_GUIDE.md) - Web interface tutorial
+- 🏗️ [Architecture](docs/references/ARCHITECTURE.md) - System design and components
+- 📋 [Tasks Guide](docs/guides/TASKS_GUIDE.md) - Task configuration
+- 💬 [Prompts Guide](docs/guides/PROMPTS_GUIDE.md) - Prompt management
+- 🔍 [Search API Guide](docs/guides/SEARCH_API_GUIDE.md) - API configuration
+- 🔧 [Troubleshooting](docs/troubleshooting/TROUBLESHOOTING.md) - Common issues and fixes
 
 ## Acknowledgments
 
