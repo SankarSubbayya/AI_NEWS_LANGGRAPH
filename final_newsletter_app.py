@@ -135,10 +135,60 @@ st.markdown('<div class="main-header">🔬 AI Cancer Newsletter</div>', unsafe_a
 newsletter_file, newsletter_html = load_latest_newsletter()
 
 if not newsletter_html:
-    st.error("❌ No newsletters found. Generate one first!")
+    st.info("👋 Welcome! No newsletters found yet.")
+    st.markdown("""
+    ### Get Started
+    
+    This app displays AI-generated cancer research newsletters. Since this is a fresh deployment,
+    no newsletters have been generated yet.
+    
+    **To generate your first newsletter:**
+    1. Make sure you have set up your API keys in Streamlit secrets
+    2. Run the newsletter generation workflow locally first
+    3. Or use the full AI workflow feature if available
+    
+    **Required API Keys:**
+    - `OPENAI_API_KEY` - For AI generation
+    - `TAVILY_API_KEY` - For research
+    - `REPLICATE_API_TOKEN` (optional) - For cover images
+    
+    **Note:** Newsletter generation is computationally intensive and may not work well
+    on Streamlit's free tier due to resource limits. This app is designed to display
+    newsletters that have been generated and committed to the repository.
+    """)
+    
+    # Show sample information
+    with st.expander("📚 About This Newsletter"):
+        st.write("""
+        The AI Cancer Newsletter uses a multi-agent LangGraph workflow to:
+        - 🔍 Research latest AI developments in cancer care
+        - ✍️ Curate and summarize findings
+        - 📊 Generate interactive visualizations
+        - 📰 Create beautiful HTML newsletters
+        - 🧠 Build cancer research knowledge graphs
+        - 📖 Generate AI-powered glossaries
+        """)
+    
+    with st.expander("🚀 Deployment Tips"):
+        st.write("""
+        **For Local Development:**
+        ```bash
+        # Run the Streamlit app locally
+        streamlit run final_newsletter_app.py
+        
+        # Generate a newsletter first
+        python -m ai_news_langgraph.main
+        ```
+        
+        **For Production Deployment:**
+        - Pre-generate newsletters and commit them to the repository
+        - The app will automatically display the latest newsletter
+        - Users can view but not generate new newsletters (resource intensive)
+        """)
+    
     st.stop()
 
-st.success(f"✅ {newsletter_file.name}")
+st.success(f"✅ Displaying: {newsletter_file.name}")
 
 # Extract data
 topics = extract_topics(newsletter_html)

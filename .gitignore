@@ -8,8 +8,10 @@ build/
 .env
 site/
 outputs/newsletters/
-outputs/newsletter_*.html
-outputs/newsletter_*.md
+outputs/newsletter_2*.html
+outputs/newsletter_2*.md
 outputs/flux_prompts/
 outputs/images/*.png
 outputs/knowledge_graphs/
+# Allow sample newsletter for deployment
+!outputs/newsletter_sample.html
