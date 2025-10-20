@@ -1,160 +1,167 @@
-# 📚 Documentation Index
+# AI News LangGraph Documentation
 
-Welcome to the AI News LangGraph documentation! This guide provides comprehensive information about the system, troubleshooting, and feature documentation.
+Welcome to the **AI News LangGraph Multi-Agent System** documentation! 🔬
+
+## 🎯 What is AI News LangGraph?
+
+A sophisticated **multi-agent system** built with LangGraph that automatically generates comprehensive cancer research newsletters using AI. The system features:
+
+- **🤖 Multi-Agent Workflow** - Research, editing, and quality review agents working together
+- **📰 Automated Newsletter Generation** - HTML newsletters with beautiful formatting
+- **🧠 Knowledge Graph** - Domain-specific cancer research knowledge extraction
+- **📖 AI-Powered Glossary** - Automatic medical term definitions
+- **🎨 Dual Image Generation** - DALL-E 3 and Flux AI cover images
+- **📊 Analytics & Visualizations** - Interactive charts and metrics
+- **🔍 Observability** - LangSmith and Phoenix tracing support
 
 ---
 
 ## 🚀 Quick Start
 
-**New to the project? Start here:**
-1. Read the main [README.md](../README.md) in the root directory
-2. Check [Setup Guides](#-setup-guides) for configuration
-3. Review [Features](#-features) to understand capabilities
+**New to the project? Get started in 3 steps:**
+
+1. **[Read the Quick Start Guide](QUICK_START.md)** - Get up and running
+2. **[Follow the Run Guide](RUN_GUIDE.md)** - Learn how to use the system
+3. **[Explore Features](features/AI_GLOSSARY_ENHANCEMENT.md)** - Discover capabilities
 
 ---
 
-## 📖 Table of Contents
+## 📚 Documentation Sections
 
-- [Setup Guides](#-setup-guides)
-- [Features](#-features)
-- [Troubleshooting](#-troubleshooting)
-- [Architecture](#-architecture)
-- [Testing](#-testing)
+### 🛠️ Setup & Configuration
 
----
+Learn how to configure and set up the system:
 
-## ⚙️ Setup Guides
+- **[LangSmith Observability](setup/LANGSMITH_QUICK_START.md)** - Track and debug your workflows
+- **[Phoenix Tracing](setup/PHOENIX_OBSERVABILITY.md)** - Advanced observability features
+- **[Flux AI Setup](setup/QUICK_FLUX_SETUP.md)** - Enable AI image generation
 
-Configuration and setup documentation:
+### 🎨 Features
 
-| Document | Description |
-|----------|-------------|
-| **[LANGSMITH_QUICK_START.md](setup/LANGSMITH_QUICK_START.md)** | Quick start guide for LangSmith observability |
-| **[LANGSMITH_SETUP.md](setup/LANGSMITH_SETUP.md)** | Detailed LangSmith configuration |
-| **[PHOENIX_OBSERVABILITY.md](setup/PHOENIX_OBSERVABILITY.md)** | Phoenix tracing and observability setup |
-| **[QUICK_FLUX_SETUP.md](setup/QUICK_FLUX_SETUP.md)** | Quick setup for Flux AI image generation |
-| **[ENABLE_FLUX_NOW.md](setup/ENABLE_FLUX_NOW.md)** | Enable Flux auto-generation feature |
+Explore the powerful features:
 
----
+- **[AI-Powered Glossary](features/AI_GLOSSARY_ENHANCEMENT.md)** - Automatic medical term definitions
+- **[Flux Auto-Generation](features/FLUX_AUTO_GENERATION.md)** - Automated cover image creation
+- **[Newsletter Display](features/NEWSLETTER_DISPLAY_COMPLETE.md)** - Beautiful HTML newsletters
 
-## 🎨 Features
+### 🔧 Troubleshooting
 
-Feature documentation and enhancements:
+Solutions for common issues:
 
-| Document | Description |
-|----------|-------------|
-| **[AI_GLOSSARY_ENHANCEMENT.md](features/AI_GLOSSARY_ENHANCEMENT.md)** | AI-powered glossary generation |
-| **[FLUX_AUTO_GENERATION.md](features/FLUX_AUTO_GENERATION.md)** | Automatic Flux image generation |
-| **[FLUX_AUTO_IMPLEMENTATION_SUMMARY.md](features/FLUX_AUTO_IMPLEMENTATION_SUMMARY.md)** | Flux implementation details |
-| **[NEWSLETTER_DISPLAY_COMPLETE.md](features/NEWSLETTER_DISPLAY_COMPLETE.md)** | Newsletter display features |
-| **[WHERE_TO_FIND_GLOSSARIES.md](features/WHERE_TO_FIND_GLOSSARIES.md)** | Glossary location guide |
-| **[ENHANCED_COVER_SUMMARY.md](features/ENHANCED_COVER_SUMMARY.md)** | Enhanced cover image features |
+- **[All Fixes Overview](troubleshooting/ALL_ERRORS_FIXED_TODAY.md)** - Complete fix summary
+- **[Knowledge Graph Issues](troubleshooting/README_KG_GLOSSARY_FIX.md)** - KG & glossary fixes
+- **[Quick Fix Guide](troubleshooting/QUICK_FIX_GUIDE.md)** - Quick reference
+
+### 💻 Development
+
+For developers and contributors:
+
+- **[Testing Guide](TESTING_GUIDE.md)** - How to run tests
+- **[Architecture](ARCHITECTURE.md)** - System design and structure
+- **[Graph Visualization](GRAPH_VISUALIZATION.md)** - Visualize the workflow
 
 ---
 
-## 🔧 Troubleshooting
+## 🎯 Key Capabilities
 
-Fixes and solutions for common issues:
+### Multi-Agent System
 
-| Document | Description |
-|----------|-------------|
-| **[ALL_ERRORS_FIXED_TODAY.md](troubleshooting/ALL_ERRORS_FIXED_TODAY.md)** | 👈 **START HERE** - Complete summary of all fixes |
-| **[README_KG_GLOSSARY_FIX.md](troubleshooting/README_KG_GLOSSARY_FIX.md)** | Knowledge graph & glossary fix overview |
-| **[KG_GLOSSARY_FIXED.md](troubleshooting/KG_GLOSSARY_FIXED.md)** | Technical details of KG/glossary fix |
-| **[QUICK_FIX_GUIDE.md](troubleshooting/QUICK_FIX_GUIDE.md)** | Quick reference for fixes |
-| **[BEFORE_AFTER_FIX.md](troubleshooting/BEFORE_AFTER_FIX.md)** | Visual comparison of fixes |
-| **[ERROR_FIXED_SUMMARY.md](troubleshooting/ERROR_FIXED_SUMMARY.md)** | Method error fix summary |
-| **[NODES_KG_METHOD_FIX.md](troubleshooting/NODES_KG_METHOD_FIX.md)** | nodes_v2.py method fix details |
-| **[DALLE_TOPIC_FIX.md](troubleshooting/DALLE_TOPIC_FIX.md)** | DALL-E topic extraction fix |
+```mermaid
+graph LR
+    A[Initialize] --> B[Research Agent]
+    B --> C[Editor Agent]
+    C --> D[Quality Reviewer]
+    D --> E[Chief Editor]
+    E --> F[Newsletter Output]
+```
 
----
+**Agents:**
+- 🔍 **Research Agent** - Fetches and analyzes cancer research articles
+- ✍️ **Editor Agent** - Summarizes and structures content
+- ⭐ **Quality Reviewer** - Ensures high-quality output
+- 📝 **Chief Editor** - Generates final newsletter with all enhancements
 
-## 🏗️ Architecture
+### Newsletter Features
 
-System architecture and design documentation:
+**Every newsletter includes:**
 
-| Document | Description |
-|----------|-------------|
-| **[GRAPH_VISUALIZATION.md](GRAPH_VISUALIZATION.md)** | Workflow graph visualization |
-| **[COSTAR_STATUS.md](COSTAR_STATUS.md)** | COSTAR prompt framework status |
-| **[STREAMLIT_APP_GUIDE.md](STREAMLIT_APP_GUIDE.md)** | Streamlit app architecture |
-
----
-
-## 🧪 Testing
-
-Testing guides and resources:
-
-| Document | Description |
-|----------|-------------|
-| **[../tests/README.md](../tests/README.md)** | Testing guide |
-| **[../test_knowledge_graph.py](../test_knowledge_graph.py)** | KG extraction test |
-| **[../test_glossary_fix.py](../test_glossary_fix.py)** | Glossary integration test |
-| **[../test_nodes_kg_fix.py](../test_nodes_kg_fix.py)** | Node method verification |
+- ✅ **Executive Summary** - AI-generated overview
+- ✅ **Topic Summaries** - Detailed analysis of 5 cancer research areas
+- ✅ **Top Articles** - Curated research papers with relevance scores
+- ✅ **Knowledge Graph** - Medical entities and relationships
+- ✅ **Medical Glossary** - AI-powered term definitions
+- ✅ **Cover Images** - DALL-E 3 and Flux AI generated
+- ✅ **Visualizations** - Charts and metrics
+- ✅ **HTML & Markdown** - Multiple output formats
 
 ---
 
-## 🔍 Common Issues & Solutions
+## 📊 Technologies
 
-### Issue: Knowledge Graph Empty
-**Solution:** See [README_KG_GLOSSARY_FIX.md](troubleshooting/README_KG_GLOSSARY_FIX.md)
-- Click **Tab 2** in Streamlit to view the Knowledge Graph
-- Use "Full AI Workflow" mode for real medical content
+**Built with:**
 
-### Issue: Method Not Found Error
-**Solution:** See [NODES_KG_METHOD_FIX.md](troubleshooting/NODES_KG_METHOD_FIX.md)
-- Fixed to use correct `export_to_json()` method
-
-### Issue: Glossary Not Working
-**Solution:** See [KG_GLOSSARY_FIXED.md](troubleshooting/KG_GLOSSARY_FIXED.md)
-- Now uses cancer-specific KG instead of generic TF-IDF
-
-### Issue: DALL-E Not Using Topics
-**Solution:** See [DALLE_TOPIC_FIX.md](troubleshooting/DALLE_TOPIC_FIX.md)
-- Enhanced to extract topics from summaries
+- **[LangGraph](https://github.com/langchain-ai/langgraph)** - Multi-agent orchestration
+- **[LangChain](https://python.langchain.com/)** - LLM framework
+- **[OpenAI GPT-4o](https://openai.com/)** - Language model
+- **[Streamlit](https://streamlit.io/)** - Web interface
+- **[Plotly](https://plotly.com/)** - Visualizations
+- **[Replicate Flux](https://replicate.com/)** - AI image generation
 
 ---
 
-## 📊 Documentation Status
+## 🎨 Example Output
 
-| Category | Files | Status |
-|----------|-------|--------|
-| Setup Guides | 5 | ✅ Organized |
-| Features | 6 | ✅ Organized |
-| Troubleshooting | 8 | ✅ Organized |
-| Architecture | 3 | ✅ Available |
-| Testing | 4 | ✅ Available |
+**Generated newsletters include:**
+
+1. **Professional Cover Images** (DALL-E 3 + Flux AI)
+2. **Executive Summary** with date and context
+3. **5 Topic Areas**:
+   - Cancer Research
+   - Cancer Prevention
+   - Early Detection and Diagnosis
+   - Treatment Planning
+   - Clinical Trials
+4. **Knowledge Graph** with 25-40 medical entities
+5. **Medical Glossary** with 15 AI-generated definitions
+6. **Interactive Charts** showing metrics and trends
+
+---
+
+## 🔗 Quick Links
+
+| Category | Link |
+|----------|------|
+| **Main README** | [README](../README.md) |
+| **Quick Start** | [Get Started](QUICK_START.md) |
+| **Setup LangSmith** | [LangSmith Guide](setup/LANGSMITH_QUICK_START.md) |
+| **Setup Phoenix** | [Phoenix Guide](setup/PHOENIX_OBSERVABILITY.md) |
+| **Troubleshooting** | [All Fixes](troubleshooting/ALL_ERRORS_FIXED_TODAY.md) |
+| **Testing** | [Test Guide](TESTING_GUIDE.md) |
+
+---
+
+## 💡 Need Help?
+
+**Common Questions:**
+
+- **How do I generate a newsletter?** See [Run Guide](RUN_GUIDE.md)
+- **Knowledge graph is empty?** See [KG Fix](troubleshooting/README_KG_GLOSSARY_FIX.md)
+- **How to set up Flux?** See [Flux Setup](setup/QUICK_FLUX_SETUP.md)
+- **How to enable tracing?** See [LangSmith](setup/LANGSMITH_QUICK_START.md)
 
 ---
 
 ## 🎯 Next Steps
 
-1. **For New Users:**
-   - Read [README.md](../README.md)
-   - Follow [LANGSMITH_QUICK_START.md](setup/LANGSMITH_QUICK_START.md)
-   - Try generating a newsletter
-
-2. **For Troubleshooting:**
-   - Start with [ALL_ERRORS_FIXED_TODAY.md](troubleshooting/ALL_ERRORS_FIXED_TODAY.md)
-   - Check specific fix documents as needed
-
-3. **For Feature Enhancement:**
-   - Review feature docs in [features/](features/)
-   - Check setup guides in [setup/](setup/)
+1. **[Install and Setup](QUICK_START.md)** - Get the system running
+2. **[Configure APIs](setup/LANGSMITH_QUICK_START.md)** - Set up API keys
+3. **[Generate Your First Newsletter](RUN_GUIDE.md)** - Create a newsletter
+4. **[Explore Features](features/AI_GLOSSARY_ENHANCEMENT.md)** - Learn advanced features
 
 ---
 
-## 📝 Contributing
-
-When adding new documentation:
-1. Place in appropriate category folder
-2. Update this INDEX.md
-3. Add entry to the relevant table
-4. Use clear, descriptive filenames
+**Ready to get started? [Read the Quick Start Guide →](QUICK_START.md)**
 
 ---
 
-**Last Updated:** October 19, 2025
-
-**Maintained By:** AI News LangGraph Team
-
+*Documentation built with ❤️ using MkDocs Material*
