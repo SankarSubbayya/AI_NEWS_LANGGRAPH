@@ -1,0 +1,44 @@
+
+stateDiagram-v2
+    [*] --> Initialized: Start Workflow
+
+    Initialized --> Fetching: Begin Topic Processing
+
+    Fetching --> Summarizing: Articles Fetched
+
+    Summarizing --> Fetching: More Topics
+    Summarizing --> Reviewing: All Topics Done
+
+    Reviewing --> Generating: Quality Assessed
+
+    Generating --> Completed: Newsletter Created
+
+    Completed --> [*]: End
+
+    Fetching --> Failed: Error
+    Summarizing --> Failed: Error
+    Reviewing --> Failed: Error
+    Generating --> Failed: Error
+
+    Failed --> [*]: Workflow Failed
+
+    note right of Fetching
+        Fetches news articles
+        for current topic
+    end note
+
+    note right of Summarizing
+        Creates summary for
+        fetched articles
+    end note
+
+    note right of Reviewing
+        Self-review pattern
+        Quality assessment
+    end note
+
+    note right of Generating
+        Creates HTML/MD
+        newsletter output
+    end note
+    

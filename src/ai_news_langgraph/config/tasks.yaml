@@ -1,0 +1,163 @@
+# Research Topics Configuration
+topics:
+  main_topic: "Artificial Intelligence in Cancer Care"
+  sub_topics:
+    - name: "Cancer Research"
+      description: "AI applications in oncology research workflows: genomics, imaging, EHR, and multi-omics integration."
+      keywords:
+        - AI
+        - oncology
+        - research
+        - genomics
+        - imaging
+        - EHR
+        - multi-omics
+      query: "+AI oncology research genomics imaging EHR multi-omics integration latest"
+    
+    - name: "Cancer Prevention"
+      description: "AI for risk prediction and prevention strategies: lifestyle, screening, and early intervention."
+      keywords:
+        - AI
+        - cancer
+        - risk prediction
+        - prevention
+        - screening
+        - lifestyle
+      query: "+AI cancer risk prediction prevention models lifestyle screening population health"
+    
+    - name: "Early Detection and Diagnosis"
+      description: "AI in medical imaging and diagnostics: radiology, digital pathology, triage, and screening."
+      keywords:
+        - AI
+        - early detection
+        - diagnosis
+        - radiomics
+        - digital pathology
+        - imaging
+      query: "+AI early detection diagnosis radiomics digital pathology imaging screening"
+    
+    - name: "Treatment Planning"
+      description: "AI for personalized treatment selection: precision oncology, drug response prediction, and therapy optimization."
+      keywords:
+        - AI
+        - cancer
+        - treatment planning
+        - precision oncology
+        - personalized therapy
+      query: "+AI cancer treatment planning precision oncology personalized therapy drug response"
+    
+    - name: "Clinical Trials"
+      description: "AI in trial design and patient matching: recruitment, eligibility screening, and endpoint prediction."
+      keywords:
+        - AI
+        - clinical trials
+        - cancer
+        - patient matching
+        - recruitment
+      query: "+AI clinical trials cancer patient matching recruitment design endpoint prediction"
+
+# Task Definitions
+fetch_ai_news:
+  node_function: "fetch_news_for_topic"  # LangGraph node function in graph.py
+  description: |
+    Search the web for recent AI agent news in cancer care across the following 5 topics:
+    1. Cancer Research: AI applications in oncology research workflows
+    2. Cancer Prevention: AI for risk prediction and prevention strategies
+    3. Early Detection and Diagnosis: AI in medical imaging and diagnostics
+    4. Treatment Planning: AI for personalized treatment selection
+    5. Clinical Trials: AI in trial design and patient matching
+  expected_output: |
+    A structured JSON containing at least 5 high-quality items per topic (minimum 25 total).
+    Each item should include: title, URL, source, publication date, relevance score, and brief summary.
+  agent: research_assistant
+  agent_class: "ResearchAgent"  # Python class in agents.py
+  output_file: outputs/fetched_news.json
+  timeout_seconds: 300
+  retry_count: 2
+  dependencies: []
+
+summarize_ai_news:
+  node_function: "summarize_topic_news"  # LangGraph node function in graph.py
+  description: |
+    Review all fetched search results and create comprehensive summaries for each topic.
+    Analyze trends, identify breakthrough developments, and highlight clinical implications.
+    Focus on developments from the past 7-30 days with emphasis on peer-reviewed research.
+  expected_output: |
+    A structured JSON with:
+    - Executive overview (180-250 words)
+    - Per-topic summaries (140-200 words each)
+    - Key findings as bullet points (3-5 per topic)
+    - Notable trends and patterns
+    - Recommended further reading (top 3 articles per topic)
+  agent: editor_assistant
+  agent_class: "EditorAgent"  # Python class in agents.py
+  dependencies:
+    - fetch_ai_news
+  output_file: outputs/summaries.json
+  timeout_seconds: 240
+  retry_count: 2
+
+draft_html_newsletter:
+  node_function: "generate_newsletter"  # LangGraph node function in graph.py
+  description: |
+    Transform the AI news summary into a professionally formatted HTML newsletter.
+    Create an engaging, mobile-responsive design that highlights key findings.
+    Include proper citations, links to original sources, and visual hierarchy.
+  expected_output: |
+    A complete HTML document that is:
+    - Mobile-responsive and accessible
+    - Professionally styled with consistent branding
+    - Well-structured with clear sections for each topic
+    - Including interactive elements (links, highlights)
+    - Optimized for email clients
+  agent: chief_editor
+  agent_class: "ChiefEditorAgent"  # Python class in agents.py
+  dependencies:
+    - summarize_ai_news
+  output_file: outputs/draft_newsletter.html
+  timeout_seconds: 180
+  retry_count: 2
+
+finalize_html_newsletter:
+  node_function: "generate_newsletter"  # Merged with draft_html_newsletter in graph.py
+  description: |
+    Proofread, fact-check, and refine the HTML newsletter.
+    Ensure all links work, facts are accurate, and formatting is consistent.
+    Add final touches including subject line and preheader text.
+    NOTE: This task is merged with draft_html_newsletter in the LangGraph implementation.
+  expected_output: |
+    A polished, publication-ready newsletter with:
+    - Executive summary (180-250 words)
+    - Topic sections with summaries (140-200 words each)
+    - Highlighted bullet points for key findings
+    - Further reading section with curated links
+    - Email subject line and preheader text
+    - Professional footer with unsubscribe option
+  agent: judge_editor
+  agent_class: "ChiefEditorAgent"  # Using ChiefEditorAgent in current implementation
+  dependencies:
+    - draft_html_newsletter
+  output_file: outputs/final_newsletter.html
+  timeout_seconds: 120
+  retry_count: 1
+
+generate_markdown_report:
+  node_function: "generate_newsletter"  # Generates both HTML and MD in graph.py
+  description: |
+    Create a comprehensive markdown report from the research findings.
+    This report should be suitable for archiving, sharing, and reference.
+    NOTE: This task is implemented within the generate_newsletter node in graph.py.
+  expected_output: |
+    A well-formatted markdown document containing:
+    - Executive summary
+    - Detailed findings by topic
+    - Links to all sources
+    - Key insights and recommendations
+    - Methodology notes
+  agent: chief_editor
+  agent_class: "ChiefEditorAgent"  # Python class in agents.py
+  dependencies:
+    - summarize_ai_news
+  output_file: outputs/research_report.md
+  timeout_seconds: 120
+  retry_count: 2

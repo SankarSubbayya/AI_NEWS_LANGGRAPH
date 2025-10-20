@@ -1,0 +1,20 @@
+{
+  "status": "completed_with_errors",
+  "outputs": {},
+  "errors": [
+    "Failed to summarize topic 0: Invalid summary data",
+    "Failed to summarize topic 1: Invalid summary data",
+    "Failed to summarize topic 2: Invalid summary data",
+    "Failed to summarize topic 3: Invalid summary data",
+    "Failed to summarize topic 4: Invalid summary data"
+  ],
+  "agent_results": [
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Cancer Research' execution_time=5.330078125 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Cancer Prevention' execution_time=7.156960725784302 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Early Detection and Diagnosis' execution_time=5.546964883804321 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Treatment Planning' execution_time=5.498345851898193 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Clinical Trials' execution_time=5.14185905456543 error_message=None retry_count=0"
+  ],
+  "summary": null,
+  "newsletter": null
+}

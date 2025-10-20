@@ -1,0 +1,150 @@
+# Prompt Templates for AI News LangGraph System
+# All prompts are defined here for easy maintenance and version control
+
+# Research Agent Prompts
+research_agent:
+  analyze_relevance:
+    description: "Score article relevance to a specific topic"
+    system: "You are {role}. {backstory}"
+    human: |
+      Score this article's relevance to the topic (0-1):
+      Topic: {topic_name} - {topic_desc}
+      Article: {title}
+      Summary: {content}
+      
+      Return only a number between 0 and 1.
+    variables:
+      - role
+      - backstory
+      - topic_name
+      - topic_desc
+      - title
+      - content
+
+# Editor Agent Prompts
+editor_agent:
+  summarize_articles:
+    description: "Create comprehensive summary of articles for a topic"
+    system: "You are {role}. {backstory}"
+    human: |
+      Create a comprehensive summary for these articles about {topic_name}:
+      
+      Articles:
+      {articles_text}
+      
+      Provide:
+      1. Overview (180-250 words)
+      2. Key insights (3-5 bullet points)
+      3. Notable trends
+      4. Recommended further reading (top 3 articles)
+      
+      Focus on: {topic_desc}
+    variables:
+      - role
+      - backstory
+      - topic_name
+      - topic_desc
+      - articles_text
+  
+  executive_summary:
+    description: "Create executive summary across all topics"
+    system: "You are {role}. {backstory}"
+    human: |
+      Create an executive summary for this AI in Cancer Care newsletter for the week of {current_date}.
+      
+      Topics covered:
+      {topics_text}
+      
+      Start with: "**Executive Summary: AI in Cancer Care Newsletter - Week of {current_date}**"
+      
+      Write a compelling 200-250 word overview that highlights the most significant developments and trends.
+      
+      IMPORTANT: Use the actual date provided ({current_date}), not "[Insert Date]" or any placeholder.
+    variables:
+      - role
+      - backstory
+      - topics_text
+      - current_date
+
+# Chief Editor Agent Prompts
+chief_editor_agent:
+  refine_content:
+    description: "Refine and proofread content for publication"
+    system: "You are {role}. {backstory}"
+    human: |
+      Review and refine the following content for publication:
+      
+      {content}
+      
+      Ensure:
+      - Grammar and style consistency
+      - Professional tone
+      - Clear and engaging language
+      - Proper formatting
+      - Factual accuracy
+    variables:
+      - role
+      - backstory
+      - content
+  
+  generate_subject_line:
+    description: "Generate compelling email subject line"
+    system: "You are {role}. {backstory}"
+    human: |
+      Create a compelling email subject line for this newsletter:
+      
+      Main topics: {topics}
+      
+      The subject line should be:
+      - Under 60 characters
+      - Engaging and clickable
+      - Professional
+      - Highlight the most important topic
+    variables:
+      - role
+      - backstory
+      - topics
+
+# Quality Assurance / Judge Editor Prompts
+judge_editor_agent:
+  fact_check:
+    description: "Fact-check content for accuracy"
+    system: "You are {role}. {backstory}"
+    human: |
+      Fact-check the following content:
+      
+      {content}
+      
+      Verify:
+      - Scientific accuracy
+      - Source credibility
+      - Claims are properly supported
+      - No misleading statements
+      
+      Provide a list of any concerns or issues found.
+    variables:
+      - role
+      - backstory
+      - content
+  
+  quality_review:
+    description: "Perform final quality review"
+    system: "You are {role}. {backstory}"
+    human: |
+      Perform a final quality review of this newsletter:
+      
+      {content}
+      
+      Check for:
+      - Completeness of information
+      - Consistency in formatting
+      - Professional presentation
+      - Reader engagement
+      - Call-to-action clarity
+      
+      Provide an overall quality score (1-10) and any recommendations.
+    variables:
+      - role
+      - backstory
+      - content
+

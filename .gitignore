@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.pyc
+dist/
+build/
+.DS_Store
+
+.env
+site/
+outputs/newsletters/
+outputs/newsletter_*.html
+outputs/newsletter_*.md
+outputs/flux_prompts/
+outputs/images/*.png
+outputs/knowledge_graphs/

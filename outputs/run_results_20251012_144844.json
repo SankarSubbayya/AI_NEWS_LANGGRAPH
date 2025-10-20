@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "error": "'dict' object has no attribute 'model_dump'",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/sankar/sankar/courses/agentic-ai/sv-agentic-ai/AI_NEWS_LANGGRAPH/src/ai_news_langgraph/workflow.py\", line 208, in execute\n    final_state = await self._execute_standard(\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sankar/sankar/courses/agentic-ai/sv-agentic-ai/AI_NEWS_LANGGRAPH/src/ai_news_langgraph/workflow.py\", line 259, in _execute_standard\n    initial_state_dict = initial_state.model_dump()\n                         ^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'model_dump'\n",
+  "thread_id": "thread_1760305724.954127"
+}

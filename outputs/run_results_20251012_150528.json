@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "error": "'dict' object has no attribute 'calculate_metrics'",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/sankar/sankar/courses/agentic-ai/sv-agentic-ai/AI_NEWS_LANGGRAPH/src/ai_news_langgraph/workflow.py\", line 238, in execute\n    metrics = final_state.calculate_metrics()\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'calculate_metrics'\n",
+  "thread_id": "thread_1760306700.339174"
+}

@@ -1,0 +1,6 @@
+{
+  "status": "failed",
+  "error": "'dict' object has no attribute 'thread_id'",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/sankar/sankar/courses/agentic-ai/sv-agentic-ai/AI_NEWS_LANGGRAPH/src/ai_news_langgraph/workflow.py\", line 203, in execute\n    final_state = await self._execute_standard(\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/sankar/sankar/courses/agentic-ai/sv-agentic-ai/AI_NEWS_LANGGRAPH/src/ai_news_langgraph/workflow.py\", line 244, in _execute_standard\n    logger.info(f\"Starting standard execution for thread {initial_state.thread_id}\")\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'dict' object has no attribute 'thread_id'\n",
+  "thread_id": "thread_1760305641.52593"
+}

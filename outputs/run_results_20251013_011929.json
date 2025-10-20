@@ -1,0 +1,108 @@
+{
+  "status": "completed",
+  "outputs": {
+    "markdown": "outputs/newsletter_20251013_011929.md",
+    "html": "outputs/newsletter_20251013_011929.html",
+    "timestamp": "20251013_011929",
+    "charts": {
+      "distribution": "outputs/charts/topic_distribution.png",
+      "quality_gauge": "outputs/charts/quality_gauge.png",
+      "quality_by_topic": "outputs/charts/quality_by_topic.png",
+      "dashboard": "outputs/charts/dashboard.png"
+    }
+  },
+  "errors": [],
+  "warnings": [],
+  "agent_results": [
+    {
+      "task_name": "fetch_news_for_topic",
+      "agent_name": "research_node",
+      "status": "success",
+      "output": "Fetched 10 articles for Cancer Research",
+      "execution_time": 6.807064056396484
+    },
+    {
+      "task_name": "summarize_topic",
+      "agent_name": "editor_node",
+      "status": "success",
+      "output": "Summarized Cancer Research",
+      "execution_time": 11.07394528388977
+    },
+    {
+      "task_name": "fetch_news_for_topic",
+      "agent_name": "research_node",
+      "status": "success",
+      "output": "Fetched 10 articles for Cancer Prevention",
+      "execution_time": 6.285910129547119
+    },
+    {
+      "task_name": "summarize_topic",
+      "agent_name": "editor_node",
+      "status": "success",
+      "output": "Summarized Cancer Prevention",
+      "execution_time": 3.8364877700805664
+    },
+    {
+      "task_name": "fetch_news_for_topic",
+      "agent_name": "research_node",
+      "status": "success",
+      "output": "Fetched 10 articles for Early Detection and Diagnosis",
+      "execution_time": 6.654615879058838
+    },
+    {
+      "task_name": "summarize_topic",
+      "agent_name": "editor_node",
+      "status": "success",
+      "output": "Summarized Early Detection and Diagnosis",
+      "execution_time": 14.233675956726074
+    },
+    {
+      "task_name": "fetch_news_for_topic",
+      "agent_name": "research_node",
+      "status": "success",
+      "output": "Fetched 10 articles for Treatment Planning",
+      "execution_time": 5.734086275100708
+    },
+    {
+      "task_name": "summarize_topic",
+      "agent_name": "editor_node",
+      "status": "success",
+      "output": "Summarized Treatment Planning",
+      "execution_time": 17.407965898513794
+    },
+    {
+      "task_name": "fetch_news_for_topic",
+      "agent_name": "research_node",
+      "status": "success",
+      "output": "Fetched 10 articles for Clinical Trials",
+      "execution_time": 6.038824081420898
+    },
+    {
+      "task_name": "summarize_topic",
+      "agent_name": "editor_node",
+      "status": "success",
+      "output": "Summarized Clinical Trials",
+      "execution_time": 12.287939071655273
+    },
+    {
+      "task_name": "review_quality",
+      "agent_name": "self_reviewer_node",
+      "status": "success",
+      "output": "Reviewed 5 summaries, avg quality: 0.85",
+      "execution_time": 61.353119134902954
+    },
+    {
+      "task_name": "generate_newsletter",
+      "agent_name": "chief_editor_node",
+      "status": "success",
+      "output": "Generated newsletter with 5 topics, HTML, and 4 charts",
+      "execution_time": 15.055752992630005
+    }
+  ],
+  "metrics": {
+    "duration_seconds": 0,
+    "total_articles": 50,
+    "total_topics": 5
+  },
+  "thread_id": "thread_1760343402.481187"
+}

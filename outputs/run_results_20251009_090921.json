@@ -1,0 +1,10 @@
+{
+  "status": "completed_with_errors",
+  "outputs": {},
+  "errors": [
+    "Missing result for topic at index 0"
+  ],
+  "agent_results": [],
+  "summary": null,
+  "newsletter": null
+}

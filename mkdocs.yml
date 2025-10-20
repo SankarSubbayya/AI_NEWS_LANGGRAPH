@@ -1,0 +1,147 @@
+site_name: AI News LangGraph Documentation
+site_description: Comprehensive documentation for the AI News LangGraph Multi-Agent System
+site_author: AI News LangGraph Team
+site_url: https://yourdomain.com
+
+# Repository
+repo_name: AI_NEWS_LANGGRAPH
+repo_url: https://github.com/yourusername/AI_NEWS_LANGGRAPH
+edit_uri: edit/main/docs/
+
+# Theme
+theme:
+  name: material
+  palette:
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+
+# Navigation
+nav:
+  - Home: index.md
+  - Getting Started:
+      - Start Here: guides/START_HERE.md
+      - Quick Start: guides/QUICK_START.md
+      - Run Guide: guides/RUN_GUIDE.md
+  - Guides:
+      - Prompts: guides/PROMPTS_GUIDE.md
+      - COSTAR Prompts: guides/COSTAR_PROMPTS_GUIDE.md
+      - Flux Prompts: guides/FLUX_PROMPTS_GUIDE.md
+      - Knowledge Graph: guides/KNOWLEDGE_GRAPH_GUIDE.md
+      - Image & Glossary: guides/IMAGE_AND_GLOSSARY_GUIDE.md
+      - Implementation: guides/IMPLEMENTATION_GUIDE.md
+      - Streamlit App: guides/STREAMLIT_APP_GUIDE.md
+      - Streamlit: guides/STREAMLIT_GUIDE.md
+      - Search API: guides/SEARCH_API_GUIDE.md
+      - Tasks: guides/TASKS_GUIDE.md
+      - Testing: guides/TESTING_GUIDE.md
+  - Features:
+      - AI Glossary: features/AI_GLOSSARY_ENHANCEMENT.md
+      - Flux Auto-Generation: features/FLUX_AUTO_GENERATION.md
+      - Flux Implementation: features/FLUX_AUTO_IMPLEMENTATION_SUMMARY.md
+      - Newsletter Display: features/NEWSLETTER_DISPLAY_COMPLETE.md
+      - Glossary Locations: features/WHERE_TO_FIND_GLOSSARIES.md
+      - Cover Image Generator: features/COVER_IMAGE_GENERATOR.md
+      - Cover Integration: features/COVER_IMAGE_INTEGRATION.md
+      - Graph Visualization: features/GRAPH_VISUALIZATION.md
+      - KG Integration: features/KG_GLOSSARY_INTEGRATION.md
+      - Topic Images: features/TOPIC_SPECIFIC_IMAGES.md
+      - Workflow Graph: features/WORKFLOW_GRAPH.md
+  - Setup:
+      - LangSmith Quick Start: setup/LANGSMITH_QUICK_START.md
+      - LangSmith Setup: setup/LANGSMITH_SETUP.md
+      - Phoenix Observability: setup/PHOENIX_OBSERVABILITY.md
+      - Flux Setup: setup/QUICK_FLUX_SETUP.md
+      - Enable Flux: setup/ENABLE_FLUX_NOW.md
+      - CivitAI Quick Start: setup/CIVITAI_QUICK_START.md
+      - Enhanced Prompts: setup/HOW_TO_CREATE_ENHANCED_PROMPTS.md
+  - Troubleshooting:
+      - Overview: troubleshooting/TROUBLESHOOTING.md
+      - All Fixes: troubleshooting/ALL_ERRORS_FIXED_TODAY.md
+      - Knowledge Graph Fix: troubleshooting/README_KG_GLOSSARY_FIX.md
+      - KG Details: troubleshooting/KG_GLOSSARY_FIXED.md
+      - Quick Fix Guide: troubleshooting/QUICK_FIX_GUIDE.md
+      - Before/After: troubleshooting/BEFORE_AFTER_FIX.md
+      - Method Error Fix: troubleshooting/ERROR_FIXED_SUMMARY.md
+      - Nodes Fix: troubleshooting/NODES_KG_METHOD_FIX.md
+      - DALL-E Fix: troubleshooting/DALLE_TOPIC_FIX.md
+  - Reference:
+      - Architecture: references/ARCHITECTURE.md
+      - CrewAI vs LangGraph: references/CREWAI_VS_LANGGRAPH.md
+      - Flux Style Examples: references/FLUX_STYLE_EXAMPLES.md
+      - KG Comparison: references/KNOWLEDGE_GRAPH_COMPARISON.md
+  - Meta:
+      - Quick Reference: meta/QUICK_REFERENCE.md
+      - MkDocs Guide: meta/MKDOCS_GUIDE.md
+      - MkDocs Setup: meta/MKDOCS_SETUP_COMPLETE.md
+      - Documentation Org: meta/DOCUMENTATION_ORGANIZED.md
+      - Cleanup Complete: meta/CLEANUP_COMPLETE.md
+      - Cleanup Summary: meta/CLEANUP_SUMMARY.md
+      - Cleanup Recommendations: meta/CLEANUP_RECOMMENDATIONS.md
+      - Unused Functions: meta/UNUSED_FUNCTIONS_REPORT.md
+
+# Plugins
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+  - tags
+
+# Extra
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername/AI_NEWS_LANGGRAPH
+    - icon: fontawesome/brands/python
+      link: https://www.python.org/
+  version:
+    provider: mike
+
+# Copyright
+copyright: Copyright &copy; 2025 AI News LangGraph Team

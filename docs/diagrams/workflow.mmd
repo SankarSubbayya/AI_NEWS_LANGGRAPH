@@ -1,0 +1,40 @@
+
+graph TD
+    %% Main Workflow
+    Start([Start]) --> Init[Initialize Workflow]
+    Init --> LoadConfig[Load Configuration]
+    LoadConfig --> CreateState[Create State]
+
+    CreateState --> FetchLoop{Fetch Loop}
+
+    FetchLoop --> FetchNews[Fetch News for Topic]
+    FetchNews --> ScoreArticles[Score Article Relevance]
+    ScoreArticles --> Summarize[Summarize Topic]
+
+    Summarize --> CheckTopics{More Topics?}
+    CheckTopics -->|Yes| FetchLoop
+    CheckTopics -->|No| ReviewAll[Review All Summaries]
+
+    ReviewAll --> QualityCheck[Calculate Quality Scores]
+    QualityCheck --> GenerateFeedback[Generate Feedback]
+
+    GenerateFeedback --> CreateNewsletter[Generate Newsletter]
+    CreateNewsletter --> SaveHTML[Save HTML]
+    CreateNewsletter --> SaveMD[Save Markdown]
+    CreateNewsletter --> SaveJSON[Save JSON]
+
+    SaveHTML --> End([End])
+    SaveMD --> End
+    SaveJSON --> End
+
+    %% Styling
+    classDef startEnd fill:#90EE90,stroke:#333,stroke-width:2px
+    classDef process fill:#87CEEB,stroke:#333,stroke-width:2px
+    classDef decision fill:#FFE4B5,stroke:#333,stroke-width:2px
+    classDef output fill:#98FB98,stroke:#333,stroke-width:2px
+
+    class Start,End startEnd
+    class Init,LoadConfig,CreateState,FetchNews,ScoreArticles,Summarize,ReviewAll,QualityCheck,GenerateFeedback,CreateNewsletter process
+    class FetchLoop,CheckTopics decision
+    class SaveHTML,SaveMD,SaveJSON output
+    

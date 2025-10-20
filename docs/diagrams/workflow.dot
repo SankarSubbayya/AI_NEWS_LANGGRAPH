@@ -1,0 +1,58 @@
+
+digraph AINewsWorkflow {
+    rankdir=TB;
+    node [shape=box, style="rounded,filled", fontname="Arial"];
+    edge [fontname="Arial"];
+
+    // Define node styles
+    start [label="START", shape=circle, fillcolor="#90EE90"];
+    end [label="END", shape=doublecircle, fillcolor="#FFB6C1"];
+
+    // Main workflow nodes
+    init [label="Initialize Workflow\n• Load configuration\n• Set up state", fillcolor="#87CEEB"];
+    fetch [label="Fetch News\n• Search articles\n• Score relevance", fillcolor="#DDA0DD"];
+    summarize [label="Summarize Topic\n• Extract key points\n• Create overview", fillcolor="#F0E68C"];
+    review [label="Review Quality\n• Assess summaries\n• Generate feedback", fillcolor="#FFA07A"];
+    generate [label="Generate Newsletter\n• Create HTML/MD\n• Save outputs", fillcolor="#98FB98"];
+
+    // Decision node
+    decision [label="More Topics?", shape=diamond, fillcolor="#FFE4B5"];
+
+    // Define edges
+    start -> init [label="begin"];
+    init -> fetch [label="initialized"];
+    fetch -> summarize [label="articles fetched"];
+    summarize -> decision;
+    decision -> fetch [label="Yes\n(next topic)", style=dashed];
+    decision -> review [label="No\n(all done)"];
+    review -> generate [label="quality checked"];
+    generate -> end [label="completed"];
+
+    // Add subgraph for parallel processing
+    subgraph cluster_parallel {
+        label="Parallel Mode (Optional)";
+        style=dashed;
+        color=gray;
+
+        pfetch1 [label="Fetch Topic 1", fillcolor="#E0E0E0"];
+        pfetch2 [label="Fetch Topic 2", fillcolor="#E0E0E0"];
+        pfetch3 [label="Fetch Topic 3", fillcolor="#E0E0E0"];
+        pmerge [label="Merge Results", shape=invtrapezium, fillcolor="#E0E0E0"];
+
+        pfetch1 -> pmerge;
+        pfetch2 -> pmerge;
+        pfetch3 -> pmerge;
+    }
+
+    // Legend
+    subgraph cluster_legend {
+        label="Legend";
+        style=solid;
+        color=black;
+
+        leg1 [label="Process Node", fillcolor="#87CEEB"];
+        leg2 [label="Decision Point", shape=diamond, fillcolor="#FFE4B5"];
+        leg3 [label="Loop Back", style=dashed];
+    }
+}
+    

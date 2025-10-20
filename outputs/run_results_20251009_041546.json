@@ -1,0 +1,20 @@
+{
+  "status": "completed_with_errors",
+  "outputs": {},
+  "errors": [
+    "Error summarizing topic 0: 'NoneType' object is not subscriptable",
+    "Error summarizing topic 1: 'NoneType' object is not subscriptable",
+    "Error summarizing topic 2: 'NoneType' object is not subscriptable",
+    "Error summarizing topic 3: 'NoneType' object is not subscriptable",
+    "Error summarizing topic 4: 'NoneType' object is not subscriptable"
+  ],
+  "agent_results": [
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Cancer Research' execution_time=5.336709022521973 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Cancer Prevention' execution_time=6.578586101531982 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Early Detection and Diagnosis' execution_time=5.146246910095215 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Treatment Planning' execution_time=5.268688201904297 error_message=None retry_count=0",
+    "task_name='fetch_news_for_topic' agent_name='research_assistant' status='success' output='Fetched 10 articles for Clinical Trials' execution_time=5.741529703140259 error_message=None retry_count=0"
+  ],
+  "summary": null,
+  "newsletter": null
+}
